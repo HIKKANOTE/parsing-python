@@ -1,0 +1,7 @@
+import requests 
+import xml.etree.ElementTree as et
+
+url = 'http://www.cbr.ru/scripts/XML_daily.asp'
+root = et.fromstring(requests.get(url).content)
+
+result = [item.attrib.get('ID') for item in root.findall('.//Valute')]
