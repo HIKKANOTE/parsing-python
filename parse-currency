@@ -1,7 +1,6 @@
-import requests 
-import xml.etree.ElementTree as et
+from urllib.request import urlopen
+from xml.etree import ElementTree as etree
 
-url = 'http://www.cbr.ru/scripts/XML_daily.asp'
-root = et.fromstring(requests.get(url).content)
-
-result = [item.attrib.get('ID') for item in root.findall('.//Valute')]
+with urlopen("https://www.cbr.ru/scripts/XML_daily.asp", timeout=10) as r:
+    
+    print(etree.parse(r).findtext('.//Valute[@ID="R01200"]/Value'))
