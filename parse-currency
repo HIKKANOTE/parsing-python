@@ -1,6 +1,6 @@
 from urllib.request import urlopen
-from xml.etree import ElementTree as etree
+from xml.etree import ElementTree as et
 
-with urlopen("https://www.cbr.ru/scripts/XML_daily.asp", timeout=10) as r:
+with urlopen("https://www.cbr.ru/scripts/XML_daily.asp") as hkd:
     
-    print(etree.parse(r).findtext('.//Valute[@ID="R01200"]/Value'))
+    print(et.parse(hkd).findtext('.//Valute[@ID="R01200"]/Value'))
