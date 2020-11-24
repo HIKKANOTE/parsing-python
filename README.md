@@ -1,2 +1,2 @@
 # parsing-python
-Parsing sites
+Exchange rate of Hong Kong dollar to Russian ruble
