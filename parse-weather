@@ -8,7 +8,7 @@ lat = 55.57282
 lon = 38.21541
 temp_arr = []
 
-api_response = requests.get(f"https://api.openweathermap.org/data/2.5/onecall?lat=55.7522&lon=37.6156&exclude=minutely,hourly,alerts&appid=ed3107afed118b76c09308fb76299252&units=metric").text
+api_response = requests.get(f"https://api.openweathermap.org/data/2.5/onecall?lat=55.57282&lon=38.215416&exclude=minutely,hourly,alerts&appid=ed3107afed118b76c09308fb76299252&units=metric").text
 json_response = json.loads(api_response)
 for i in range(5):
     temp_arr.append(json_response["daily"][i]["temp"]["morn"])
